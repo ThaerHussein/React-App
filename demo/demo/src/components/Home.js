@@ -5,13 +5,12 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-require('dotenv').config();
 function Home() {
 
     const [memesArr, setMemesArr] = useState([]);
 
     const sendReq = async () => {
-        const serverURL = `${process.env.REACT_APP_serverURL}/allMemes`;
+        const serverURL = `https://mems-server-production.up.railway.app/allMemes`;
         const response = await fetch(serverURL);
         const data = await response.json();
         console.log(data)
